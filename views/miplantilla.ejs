@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi plantilla EJS con Bootstrap</title>
+  <!-- Enlace al archivo CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5">Bienvenido <%= usuario.nombre %> a mi plantilla EJS con Bootstrap</h1>
+    <p>Edad: <%= usuario.edad %></p>
+    <p>Correo: <%= usuario.correo %></p>
+
+    <h2 class="mt-4">Artículos</h2>
+    <ul class="list-group">
+      <% articulos.forEach(articulo => { %>
+        <li class="list-group-item">
+          <h3><%= articulo.titulo %></h3>
+          <p><%= articulo.contenido %></p>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <!-- JavaScript de Bootstrap (opcional, pero necesario para algunas funcionalidades) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

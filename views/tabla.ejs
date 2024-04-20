@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif; /* Cambiada la fuente */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .custom-title {
+            color: blue; /* Cambiado a color azul */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="custom-title">Tabla de Multiplicar del <%= numero %></h1>
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>Resultado</th>
+                </tr>
+                <% for (let i = 1; i <= 10; i++) { %>
+                    <tr>
+                        <td><%= numero %> x <%= i %></td>
+                        <td><%= numero * i %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
