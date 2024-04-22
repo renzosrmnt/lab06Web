@@ -4,5 +4,27 @@ html
     title Mi página dinámica con Pug
     link(rel="stylesheet", href="/css/styles.css")
   body
-    h1 Hola, #{nombre}!
-    script(src="/js/main.js")
+    .container
+      .content
+        h1 Hola, #{nombre}!
+        p Bienvenido a mi página dinámica con Pug.
+        br
+        .user-details
+          p
+            strong Nombre:
+            | #{nombre}
+          p
+            strong Instituto:
+            | #{instituto}
+          p
+            strong Correo:
+            | #{correo}
+        h2 Integrantes
+        br
+        ul.articles-list
+          each articulo in articulos
+            li
+              h3 #{articulo.titulo}
+              p #{articulo.contenido}
+    footer
+      p &copy; 2024 Mi Página Dinámica. Todos los derechos reservados.

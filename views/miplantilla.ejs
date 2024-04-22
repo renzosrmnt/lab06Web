@@ -2,27 +2,87 @@
 <html>
 <head>
   <title>Mi plantilla EJS con Bootstrap</title>
-  <!-- Enlace al archivo CSS de Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Estilos CSS personalizados -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #41bded; /* Verde claro */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 {
+      color: #333;
+      font-weight: bold;
+    }
+
+    p {
+      color: #555;
+    }
+
+    /* Estilos para las tarjetas */
+    .card {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff; /* Verde claro */
+    }
+
+
+    .card-body {
+      color: #333;
+    }
+
+    /* Colores para las tarjetas */
+    .card-primary .card-body {
+      background-color: #e7f2f6; /* Azul claro */
+      color: #333;
+    }
+
+    .card-success .card-body {
+      color: #333;
+    }
+
+    .card-danger .card-body {
+      background-color: #ffb6c1; /* Rosa claro */
+      color: #333;
+    }
+
+    .card-warning .card-body {
+      background-color: #ffd700; /* Amarillo claro */
+      color: #333;
+    }
+
+    .card-info .card-body {
+      background-color: #b0e0e6; /* Celeste claro */
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="mt-5">Bienvenido <%= usuario.nombre %> a mi plantilla EJS con Bootstrap</h1>
-    <p>Edad: <%= usuario.edad %></p>
-    <p>Correo: <%= usuario.correo %></p>
+    <h1 class="mt-5 text-center">¡Bienvenido <%= usuario.nombre %>!</h1>
+    <p class="text-center">Correo: <%= usuario.correo %></p>
 
     <h2 class="mt-4">Artículos</h2>
-    <ul class="list-group">
-      <% articulos.forEach(articulo => { %>
-        <li class="list-group-item">
+    <% articulos.forEach((articulo, index) => { %>
+      <div class="card card-primary">
+        <div class="card-body">
           <h3><%= articulo.titulo %></h3>
           <p><%= articulo.contenido %></p>
-        </li>
-      <% }); %>
-    </ul>
+        </div>
+      </div>
+    <% }); %>
   </div>
-
-  <!-- JavaScript de Bootstrap (opcional, pero necesario para algunas funcionalidades) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
